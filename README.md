@@ -2,6 +2,8 @@
 
 Daniel Nolan
 
+Score: 95/100
+
 # Reddit Data Challenges
 
 ## Challenge 1
