@@ -1,5 +1,7 @@
 # Challenge Week 12 Submission Template
 
+Daniel Nolan
+
 # Reddit Data Challenges
 
 ## Challenge 1
@@ -51,26 +53,39 @@ You would have to effectively create a code that can identify top comments that 
 
 ## Challenge 1
 
-[Screenshot your query and a result]
+![Photo](http://i.imgur.com/ZLatVpp.png)
+
+The total hpcp value came out to be 62.
 
 ## Challenge 2
 
-[Query snippet]
+db.normal.aggregate([{$match:{"DATE":{$regex: /^20100425/}, "STATION_NAME":{$regex: /^LAS VEGAS/}}},{$group: { _id: "$STATION_NAME",avgAmount: {$avg: "$HLY-WND-AVGSPD"}}}])
 [Answer]
 
 ## Challenge 3
+var query = db.businesses.find({"city":"Madison","state":"WI"}),array = [], num = db.businesses.count({"city": "Madison","state":"WI"});
 
-[Query snippet]
+for (var i = 0; i < num; i++) array.push(query[i]["business_id"]);
+
+db.reviews.count({"business_id":{$in : array}})
 [Answer]
 
 ## Challenge 4
 
-[Query snippet]
+var query = db.businesses.find({"city":"LasVegas","state":"WI"}),array = [], num = db.businesses.count({"city": "Las Vegas","state":"NV"});
+
+for (var i = 0; i < num; i++) array.push(query[i]["business_id"]);
+
+db.reviews.count({"business_id":{$in : array}})
 [Answer]
 
 ## Challenge 5
 
-[Query snippet]
+var query = db.businesses.find({"city":"Phoenix","state":"AZ"}),array = [], num = db.businesses.count({"city": "Phoenix","state":"AZ"});
+
+for (var i = 0; i < num; i++) array.push(query[i]["business_id"]);
+
+db.reviews.count({"business_id":{$in : array}})
 [Answer]
 
 ## Challenge 6 [BONUS]
