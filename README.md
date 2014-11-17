@@ -58,40 +58,33 @@ You would have to effectively create a code that can identify top comments that 
 The total hpcp value came out to be 62.
 
 ## Challenge 2
-
+![]()
 db.normal.aggregate([{$match:{"DATE":{$regex: /^20100425/}, "STATION_NAME":{$regex: /^LAS VEGAS/}}},{$group: { _id: "$STATION_NAME",avgAmount: {$avg: "$HLY-WND-AVGSPD"}}}])
 [Answer]
 
 ## Challenge 3
-var query = db.businesses.find({"city":"Madison","state":"WI"}),array = [], num = db.businesses.count({"city": "Madison","state":"WI"});
+![Challenge3](http://i.imgur.com/EUAdiu2.png)
+var query = db.business.find({"city":"Madison","state":"WI"}),array = [], num = db.business.count({"city": "Madison","state":"WI"});
 
 for (var i = 0; i < num; i++) array.push(query[i]["business_id"]);
-
+[1630]
 db.reviews.count({"business_id":{$in : array}})
-[Answer]
+[31305]
 
 ## Challenge 4
-
-var query = db.businesses.find({"city":"LasVegas","state":"WI"}),array = [], num = db.businesses.count({"city": "Las Vegas","state":"NV"});
+![Challenge4](http://i.imgur.com/GuMTH5I.png)
+var query = db.business.find({"city":"LasVegas","state":"WI"}),array = [], num = db.business.count({"city": "Las Vegas","state":"NV"});
 
 for (var i = 0; i < num; i++) array.push(query[i]["business_id"]);
-
+[12021]
 db.reviews.count({"business_id":{$in : array}})
-[Answer]
+[522104]
 
 ## Challenge 5
-
-var query = db.businesses.find({"city":"Phoenix","state":"AZ"}),array = [], num = db.businesses.count({"city": "Phoenix","state":"AZ"});
+![Challenge5](http://i.imgur.com/CCilNDB.png)
+var query = db.business.find({"city":"Phoenix","state":"AZ"}),array = [], num = db.business.count({"city": "Phoenix","state":"AZ"});
 
 for (var i = 0; i < num; i++) array.push(query[i]["business_id"]);
-
+[7499]
 db.reviews.count({"business_id":{$in : array}})
-[Answer]
-
-## Challenge 6 [BONUS]
-
-[Code]
-[Answer]
-
-
-
+[185907]
